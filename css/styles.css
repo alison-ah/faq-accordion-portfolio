@@ -35,7 +35,7 @@ h1 {
     font-family: "Playfair", serif;
     font-style: italic;
     font-weight: 600;
-    font-size: 1.5em;
+    font-size: 1.75em;
     text-align: left;
     padding: 0% 10%;  
 }
@@ -49,6 +49,16 @@ h2 {
     gap: .5em;
     margin-left: .75em;
     margin-bottom: .25em;
+}
+
+p {
+    display: flex;
+    font-size: 1em;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--light-font);
+    text-align: left;
+    line-height: 1.5em;
+    padding-top: 1em;
 }
 
 details {
@@ -76,6 +86,7 @@ summary {
     border-top: solid lightgray 1px;
     text-align: left;
     padding-top: 1.5em;
+    padding-right: 2em;
     cursor: pointer;
     font-weight: bold;
     color: var(--dark-font);
@@ -86,20 +97,39 @@ summary::-webkit-details-marker {
     display: none;
   }
 
-p {
-    display: flex;
-    font-size: 1em;
-    font-family: Arial, Helvetica, sans-serif;
-    color: var(--light-font);
-    text-align: left;
-    line-height: 1.5em;
-    padding-top: 1em;
+summary {
+    position: relative;
 }
 
-details .first-question {
-    border-top: none;
+summary::marker {
+    content: none;
 }
 
+summary::before,
+summary::after {
+    content: '';
+}
+  
+summary::before,
+summary::after {
+    width: .75em;
+    height: 0;
+    border-bottom: 2px solid;
+    position: absolute;
+    top: calc(50% - 1px);
+    right: 0;
+    transform: translateY(-50%);
+}
+
+summary::after {
+    transform: rotate(90deg);
+    transform-origin: 50% 50%;
+}
+
+[open] summary::after {
+    transform: rotate(0deg);
+}
+  
 details :hover {
     color: var(--hover-text-on-light);
     cursor: pointer;
@@ -120,6 +150,8 @@ details :hover {
 .attribution a { 
     color: var(--white); 
 }
+
+/*-- Media Queries for Responsive Design --*/
 
 @media (min-width: 480px) {
     body {
