@@ -4,7 +4,7 @@ After first coding an [FAQ with JavaScript for a Frontend Mentor challenge](http
 [View the FAQ Accordion](https://alison-ah.github.io/faq-accordion-portfolio/)
 <br>
 
-<img src="img/accordion.png" alt="preview image of FAQ Accordion" width=250px>
+<img src="img/accordion.png" alt="preview image of FAQ Accordion" width=300px>
 
 ## Built with
 - Semantic HTML5 markup
